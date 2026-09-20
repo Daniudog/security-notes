@@ -9,6 +9,7 @@ understand them, and I keep the parts where I got stuck.
 - `linux/` : Linux fundamentals, filesystem, permissions, processes
 - `bash/` : scripts I've written while learning, with notes on what broke
 - `portswigger/` : Web Security Academy lab writeups
+- `python scripts/` : python scripts
 - `CTFs/` : coming soon.
 
 
