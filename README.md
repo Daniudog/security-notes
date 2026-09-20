@@ -6,10 +6,10 @@ understand them, and I keep the parts where I got stuck.
 
 ## Contents
 
-- `linux/` — Linux fundamentals, filesystem, permissions, processes
-- `bash/` — scripts I've written while learning, with notes on what broke
-- `portswigger/` — Web Security Academy lab writeups
-- `CTFs/` — coming soon.
+- `linux/` : Linux fundamentals, filesystem, permissions, processes
+- `bash/` : scripts I've written while learning, with notes on what broke
+- `portswigger/` : Web Security Academy lab writeups
+- `CTFs/` : coming soon.
 
 
 ## Format
