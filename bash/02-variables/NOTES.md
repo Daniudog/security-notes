@@ -22,3 +22,22 @@ Common mistakes:
 Debug trick: printf '[%s]\n' $var shows how many pieces bash sees.
 
 Module 2 Checkpoint: variables.sh
+
+Write a script that builds a small "about me" report. Requirements:
+
+- Shebang, comment header (topic, purpose, how to run), and the three sections SETUP, LOGIC, OUTPUT.
+- In SETUP, define all your variables:
+- name: your name, hardcoded
+- project: a value that contains a space, like "Security Notes"
+- user: from whoami
+- today: the weekday from date +%A
+- folder: from pwd
+- Each command (whoami, date, pwd) may be called once. Reuse the variables afterwards.
+- In LOGIC, build a summary variable that combines at least two of the others, for example one that says who you are and what project you're working on.
+
+ In OUTPUT, print:
+- a title line
+- each variable with a label, always written as "$variable"
+- one line that uses ${...} braces, like ${name}'s
+- two lines that show double vs single quotes, printing the same text both ways
+- Comment every section and every group of commands.
