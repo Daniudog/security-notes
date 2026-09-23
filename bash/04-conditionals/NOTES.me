@@ -1,1 +1,45 @@
+Conditionals
 
+A conditional runs code only if something is true. Bash checks a condition, then decides which block to run.
+
+Structure:
+if [[ condition ]]; then
+  # runs if true
+elif [[ other_condition ]]; then
+  # runs if the first was false, this one true
+else
+  # runs if none were true
+fi
+
+elif and else are optional. fi always closes the block.
+
+
+1. Number comparisons (-eq, -ne, -gt, -lt, -ge, -le)
+
+Symbol	Meaning
+-eq	equal
+-ne	not equal
+-gt	greater than
+-lt	less than
+-ge	greater than or equal
+-le	less than or equal
+
+
+2. String comparisons: == (equal), != (not equal)
+
+
+3. File tests: -f "path" (file exists), -d "path" (directory exists)
+
+4. Combining conditions: && (and), || (or) — works best inside [[ ]]
+
+[ vs [[ ]]
+
+[ ] is the classic test, needs a space right after [ and right before ].
+[[ ]] is the modern version, more reliable with &&/||. Use [[ ]] going forward.
+
+
+Common mistakes
+
+- No space before ] in [ ] — breaks the script (I just hit this one).
+- Using -eq on strings or == on numbers.
+- Forgetting fi to close the block.
