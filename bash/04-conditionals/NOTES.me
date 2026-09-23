@@ -43,3 +43,29 @@ Common mistakes
 - No space before ] in [ ] — breaks the script (I just hit this one).
 - Using -eq on strings or == on numbers.
 - Forgetting fi to close the block.
+
+
+
+Module 4 Checkpoint: check.sh
+
+- Write a script that checks a file's status and reports on it. Requirements:
+
+- Shebang, header comment, SETUP / LOGIC / OUTPUT sections, using [[ ]] throughout.
+
+- In SETUP: take a filename as $1, defaulting to "intro.sh" if not given.
+
+In LOGIC:
+ - Check if the file exists (-f). Store the result in a variable or just use the if directly — your choice, but comment your reasoning.
+ - If it exists, check whether the filename ends in .sh (use [[ "$file" == *.sh ]]) and note if it's a bash script.
+
+In OUTPUT, using if / elif / else, print exactly one of:
+- "$file exists and is a bash script."
+- "$file exists but is not a bash script."
+- "$file does not exist."
+- Comment every section and condition, explaining what it checks.
+
+
+Test it three ways:
+- bash check.sh intro.sh
+- bash check.sh notes.txt
+- bash check.sh doesnotexist.sh
