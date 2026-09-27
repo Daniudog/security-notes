@@ -4,9 +4,9 @@ echo "Hello Friend"
 sleep 2
 
 read -p "What is your username?: " username
-
+echo " "
 read -sp "Create password: " password
-
+echo " "
 read -sp "Confirm password: " passwd
 if [[ $password == $passwd ]]; then
 	echo "password saved"
