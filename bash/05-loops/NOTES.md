@@ -1,7 +1,5 @@
 Module 5 Note: Loops
 
-(Save as NOTES.md in bash/05-loops/.)
-
 What is it?
 A loop repeats a block of code without you writing it out multiple times.
 
@@ -82,3 +80,29 @@ Common mistakes
 A while loop with no line that changes the condition variable never ends (infinite loop).
 Forgetting to quote "$file" inside the loop body — breaks on filenames with spaces.
 Repeating the same block for every possible case (one per elif) instead of writing the shared logic once and branching only where it actually differs.
+
+Classwork: filescanner.sh
+
+Build a script that reviews files in a folder and reports on them, combining loops with everything from Modules 1–4.
+
+Requirements:
+
+Accept a target file extension as an argument (e.g. sh, txt), defaulting to sh if not given (Module 3).
+Loop over every file in the current folder matching that extension (Module 5, globs).
+For each file, use a conditional to check (Module 4):
+if it’s empty (hint: the test is -s, meaning “has size greater than zero” — look it up and use ! to flip it, or find the opposite test)
+otherwise, count how many lines it has (hint: wc -l gives a line count; use $(...) to capture it)
+Keep a running counter of how many files were checked and how many were empty, using a while or for loop with a counter variable (Module 2/5).
+Skip (continue) any file whose name starts with a dot (hidden files), if you happen to encounter one.
+Print a per-file line as you go, plus a summary at the end with the totals.
+Follow the script standard: shebang, header, SETUP / LOGIC / OUTPUT, comments throughout.
+
+This is a genuinely useful script — it’s a quick way to audit a folder of scripts or notes before committing them.
+
+Write it yourself first. If you get stuck on one specific piece (like the “file is empty” test), research about it and go again, review your code if possible. Getting stuck is the learning process. Test it inside your bash/ folder where you have real .sh files to check.
+
+
+
+
+
+
