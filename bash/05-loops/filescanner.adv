@@ -1,0 +1,57 @@
+#!/bin/bash
+# ------------------------------------------------------------
+# Topic:   Module 5 - Loops
+# Purpose: Scan files of a given extension in the current folder,
+#          report whether each is empty, and count their lines
+# Run:     chmod +x filescanner.sh && ./filescanner.sh [extension]
+# ------------------------------------------------------------
+# NOTE: This is the advanced version of filescanner.sh.
+
+echo "---------file scanner------------"
+sleep 1
+echo "USAGE: ./filescanner.sh <EXTENSION>"
+echo "example: ./filescanner.sh sh"
+echo "example: ./filescanner.sh txt"
+echo "example: ./filescanner.sh py"
+echo "example: ./filescanner.sh log"
+echo "chmod u+x ./filescanner.sh if permission to run is denied"
+echo "Without an argument, the scanner automatically checks for bashscripts"
+
+# --- SETUP ---
+# Default to "sh" if no extension argument was given
+type=${1:-"sh"}
+echo "Scanning for files with the .$type extension"
+
+# Counters, tracked across the whole loop
+count=0
+empty=0
+
+# --- LOGIC ---
+# One pass through matching files. The empty-check and line-count
+# logic is the same no matter the extension, so it only needs
+# writing once instead of once per type.
+for file in *."$type"; do
+
+  # skip hidden files (names starting with a dot)
+  if [[ "$file" == .* ]]; then
+    continue
+  fi
+
+  echo "$file is a .$type file"
+
+  if [[ ! -s "$file" ]]; then
+    echo "$file is empty"
+    empty=$((empty + 1))
+  else
+    echo "$file has content"
+  fi
+
+  lines=$(wc -l < "$file")
+  echo "$file has $lines lines"
+
+  count=$((count + 1))
+done
+
+# --- OUTPUT ---
+echo "Total number of $type files: $count"
+echo "Total number of empty files: $empty"
