@@ -1,6 +1,6 @@
 Classwork: log_auditor.sh
 
-Build a script that audits a log file and produces a filtered summary, combining pipes, redirection, and exit codes with everything from Modules 1–7. This is a realistic security/sysadmin-flavored tool: checking a log for errors without having to read the whole thing.
+I had to add the classwork to the readme section. Build a script that audits a log file and produces a filtered summary, combining pipes, redirection, and exit codes with everything from Modules 1–7. This is a realistic security/sysadmin-flavored tool: checking a log for errors without having to read the whole thing.
 
 Requirements:
 
@@ -30,7 +30,3 @@ EOF
 (That << is a heredoc — a quick way to create a multi-line file. We’ll cover it properly in a later module, but it’s handy for test data now.)
 
 Write it yourself
-
-e both unquoted — risky if a value ever had a space.
-No section labels (SETUP / LOGIC / OUTPUT) and no header comment.
-2>&1 on echo "..." > error_only.txt 2>&1 does nothing useful — echo essentially never fails or writes to stderr, so there’s nothing for 2>&1 to redirect. It’s harmless here, but it’s not doing a real job — a sign of copying the pattern without the specific reason behind it.
