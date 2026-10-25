@@ -1,0 +1,6 @@
+2026-10-20 09:15:02 INFO user=dot action =login status=200
+2026-10-20 09:16:45 ERROR user=dot action=fetch status=500
+2026-10-20 09:20:11 WARNING user=guest action=login status=401
+2026-10-20 09:22:33 INFO user=admin action=delete status=200
+2026-10-20 09:25:09 ERROR user=guest action=fetch status=500
+2026-10-20 09:30:00 INFO user=dot action=logout status=200
